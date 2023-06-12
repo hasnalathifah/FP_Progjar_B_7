@@ -21,8 +21,8 @@ COLORS = {
 # window properties
 CLIENT_CAPTION = "Blokus Client"
 SERVER_CAPTION = "Blokus Server"
-WINDOW_ICON = "D:/progjar/BlockBattle/static/assets/img/blockbattle-icon.png"
-INTRO_LOGO = "D:/progjar/BlockBattle/static/assets/img/blockbattle.png"
+WINDOW_ICON = "../static/assets/img/blockbattle-icon.png"
+INTRO_LOGO = "../static/assets/img/blockbattle.png"
 
 # game window specification
 WINDOW_WIDTH = 1280
