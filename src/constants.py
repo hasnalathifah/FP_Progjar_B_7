@@ -8,7 +8,7 @@ ENABLE_INTRO = True
 
 ENABLE_VERBOSE = 1
 
-root = 'C:/Users/Admin/blockbattle'
+root = '..'
 
 # enable audio (false for mute)
 ENABLE_AUDIO = False
