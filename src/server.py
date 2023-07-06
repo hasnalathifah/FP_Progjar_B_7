@@ -2,7 +2,6 @@ import socket  # for networking
 import sys
 from threading import Thread  # for threading
 
-# HOST = '192.168.100.193'
 HOST = socket.gethostbyname(socket.gethostname())  # this address is the ipv4
 PORT = 8080  # port to listen on for clients
 
@@ -63,6 +62,18 @@ try:
         client_socket, client_address = s.accept()
         list_of_clients.append(client_socket)
         client_socket.send('p2'.encode())
+        Thread(target=client_thread, args=(client_socket,)).start()
+        print(f"\nConnected to {client_address}!")
+        
+        client_socket, client_address = s.accept()
+        list_of_clients.append(client_socket)
+        client_socket.send('p3'.encode())
+        Thread(target=client_thread, args=(client_socket,)).start()
+        print(f"\nConnected to {client_address}!")
+        
+        client_socket, client_address = s.accept()
+        list_of_clients.append(client_socket)
+        client_socket.send('p4'.encode())
         Thread(target=client_thread, args=(client_socket,)).start()
         print(f"\nConnected to {client_address}!")
 

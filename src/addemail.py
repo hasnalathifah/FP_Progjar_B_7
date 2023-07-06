@@ -16,7 +16,7 @@ def init_pygame(win_size=constants.WINDOW_SIZE, win_caption=constants.CLIENT_CAP
     return window, background, clock
 
 
-class GameIntro:
+class PlayerEmail:
 
     def __init__(self):
         # for debugging
@@ -29,8 +29,7 @@ class GameIntro:
         # INPUT - font
         self.font = pygame.font.Font(None, 25)
         self.user_input = ''
-        self.server_ip = ''
-        self.server_port = ''
+        self.emailplayer = ''
         # INPUT - box and color
         self.input_box = pygame.Rect(560, 480, 150, 32)
         self.color_active = pygame.Color('lightskyblue3')
@@ -51,7 +50,7 @@ class GameIntro:
             game_logo = pygame.image.load(constants.INTRO_LOGO).convert()
             logo_rect = game_logo.get_rect(center=self.window.get_rect().center)
             logo_rect.move_ip(0, -80)
-            msg_key = "Please input server IP and Port : '(IP) (Port)'"
+            msg_key = "Please input your email : "
             font = pygame.font.SysFont("Trebuchet MS", 25)
             font_dict = font.render(msg_key, False, constants.COLORS["WHITE"])
             pos_rect_dict = pygame.Rect((0, 370, 1280, 100))
@@ -72,9 +71,8 @@ class GameIntro:
                 # need further try-except to check ip
                 elif event.key == pygame.K_RETURN:
                     if self.user_input != '':
-                        temp = self.user_input.split(' ')
-                        self.server_ip = temp[0]
-                        self.server_port = temp[1]
+                        temp = self.user_input
+                        self.emailplayer = temp
                         self.done = True
                 else:
                     self.user_input += event.unicode
@@ -96,5 +94,5 @@ class GameIntro:
             pygame.display.update()
 
 if __name__ == "__main__":
-    intro = GameIntro()
+    email = PlayerEmail()
 
